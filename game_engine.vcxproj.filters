@@ -1494,6 +1494,9 @@
     <ClInclude Include="src\thirdParty\luajit\src\lauxlib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\thirdParty\luajit\src\luajit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\thirdParty\glm\detail\func_common.inl">

@@ -13,7 +13,10 @@ void TextDB::SetRenderer(SDL_Renderer* renderer) {
 }
 
 void TextDB::LoadFont(const std::string &filename, int fontSize) {
-  std::string path = "resources/fonts/" + filename + ".ttf";
+  std::string base = "resources/fonts/" + filename;
+  std::string path = base + ".ttf";
+  if (!std::filesystem::exists(path))
+    path = base + ".otf";
 
   if (!std::filesystem::exists(path)) {
     std::cout << "error: font " << filename << " missing";

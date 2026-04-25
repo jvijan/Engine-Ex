@@ -52,8 +52,6 @@ void ComponentDB::Init() {
 void ComponentDB::InitializeState() {
   luaState = luaL_newstate();
   luaL_openlibs(luaState);
-  luaL_dostring(luaState, "jit.opt.start(3)");
-  //luaL_dostring(luaState, "require('jit.v').on()");
 }
 
 void ComponentDB::InitializeFunctions() {

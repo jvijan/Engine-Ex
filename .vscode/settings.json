@@ -1,0 +1,12 @@
+{
+    "Lua.workspace.library": [
+        "${workspaceFolder}/.vscode"
+    ],
+    "Lua.workspace.checkThirdParty": false,
+    "Lua.diagnostics.globals": [
+        "Actor", "Input", "Debug", "Scene", "Physics",
+        "Camera", "Audio", "Text", "Image", "Application", "Event",
+        "Vector2"
+    ],
+    "Lua.runtime.version": "Lua 5.4"
+}

@@ -51,6 +51,18 @@ void SceneDB::SwitchToScene(const std::string &sceneName) {
   }
   std::vector<Actor>& sceneActors = it->second;
 
+  // Call OnDestroy for all actors that won't persist into the new scene
+  for (auto& actor : currentScene) {
+    if (actor && !actor->dontDestroy && !actor->destroyed) {
+      actor->OnDestroy();
+    }
+  }
+  for (auto& actor : actorsToAdd) {
+    if (actor && !actor->dontDestroy && !actor->destroyed) {
+      actor->OnDestroy();
+    }
+  }
+
   // Keep actors preserved from previous scene if they're not supposed to be destroyed
   std::vector<std::unique_ptr<Actor>> dontDestroyActors;
   for (auto& actor : currentScene) {
